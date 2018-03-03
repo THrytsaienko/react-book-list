@@ -5,10 +5,10 @@ const Books = (props) => (
     <tbody>
         {
             props.books.map((book, index) => {
-                <tr>
-                    <td key={index}>{book.title}</td>
-                    <td key={index}>{book.author}</td>
-                    <td key={index}>{book.isbn}</td>
+                <tr key={index}>
+                    <td>{book.title}</td>
+                    <td>{book.author}</td>
+                    <td>{book.isbn}</td>
                     <td><a href="#" className="delete">X</a></td>
                 </tr>
                 // <BookItem 
