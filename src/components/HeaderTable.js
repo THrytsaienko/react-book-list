@@ -3,10 +3,10 @@ import React from 'react';
 const HeaderTable = () => (
     <thead>
         <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>ISBN</th>
-            <th></th>
+            <th key={1}>Title</th>
+            <th key={2}>Author</th>
+            <th key={3}>ISBN</th>
+            <th key={4}></th>
         </tr>
     </thead>
 )

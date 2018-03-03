@@ -15,30 +15,8 @@ export default class AddBook extends React.Component {
         console.log(author);
         console.log(isbn);
 
-        // let arrBookInfo = [];
-        // if(title){
-        //     arrBookInfo.push(title);
-        // }
-        // if(author){
-        //     arrBookInfo.push(author);
-        // }
-        // if(isbn){
-        //     arrBookInfo.push(isbn);
-        // }
-
-        let arrBookInfo = {};
-        arrBookInfo.title = title;
-        arrBookInfo.author = author;
-        arrBookInfo.isbn = isbn;
-
-        console.log(arrBookInfo.author);
-    
-        // arrBookInfo.forEach(element => {
-        //     console.log(element);
-        // });
-
-        const message = this.props.handleAddBook(arrBookInfo);
-        console.log(message.text);
+        const message = this.props.handleAddBook({title, author, isbn});
+        console.log(`message ${message.text}`);
 
         this.setState(() => ({
             messageText: message.text,

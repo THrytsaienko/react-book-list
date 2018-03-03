@@ -6,50 +6,33 @@ import Books from './Books';
 
 export default class BookList extends React.Component {
     state = {
-        books: [
-            {
-                title: undefined,
-                author: undefined,
-                isbn: undefined
-            }
-        ]
+        books: []
     }
-    // state = {
-    //     books: [{}]
-    // }
     handleAddBook = (arrBookInfo) => {
-        // console.log(arrBookInfo[0]);
-        // const bookss = [
-        //     {
-        //         title: undefined,
-        //         author: undefined,
-        //         isbn: undefined
-        //     }
-        // ];
-        // console.log(bookss);
-        // let newArr = bookss.concat(arrBookInfo);
-        // console.log(newArr);
-        // console.log(arrBookInfo.title);
-        // const size = Object.keys(arrBookInfo).length;
-        // console.log(size);
         if (Object.keys(arrBookInfo).length !== 3){
             return {
                 text: 'Please fill in all fields!',
                 className: 'error'
             }
         } else {
+            this.setState((prevState) => {
+                return {
+                    books: prevState.books.concat(arrBookInfo)
+                };
+            });
             return {
                 text: 'Book Added!',
                 className: 'success'
             }
         }
-
-        this.setState((prevState) => ({ books: prevState.books.concat({arrBookInfo}) }));
     }
     componentDidMount() {
         try {
             const json = localStorage.getItem('books');
             const books = JSON.parse(json);
+            console.log(json);
+            console.log(books);
+            console.log(books[0].title);
 
             if (books) {
                 this.setState(() => ({ books }));
@@ -62,6 +45,7 @@ export default class BookList extends React.Component {
     componentDidUpdate(prevProps, prevState) {
         if (prevState.books.length !== this.state.books.length) {
             const json = JSON.stringify(this.state.books);
+            console.log("JSON" + json);
             localStorage.setItem('books', json);
         }
         console.log('componentDidUpdate');
