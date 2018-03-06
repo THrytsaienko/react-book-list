@@ -24,5 +24,8 @@
     "validator": "^9.4.1",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
+  },
+  "devDependencies": {
+    "uuid": "^3.2.1"
   }
 }

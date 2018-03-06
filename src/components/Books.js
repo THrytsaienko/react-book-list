@@ -4,9 +4,9 @@ import BookItem from './BookItem';
 const Books = (props) => (
     <tbody>
         {
-            props.books.map((book, index) => ( 
+            props.books.map((book, index) => (
                 <BookItem 
-                    key={index}
+                    key={book.id}
                     bookTitle={book.title}
                     bookAuthor={book.author}
                     bookIsbn={book.isbn}

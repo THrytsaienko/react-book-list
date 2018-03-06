@@ -9,6 +9,7 @@ export default class BookList extends React.Component {
         books: []
     }
     handleAddBook = (arrBookInfo) => {
+        console.log(arrBookInfo);
         if (Object.keys(arrBookInfo).length !== 3){
             return {
                 text: 'Please fill in all fields!',
@@ -33,6 +34,7 @@ export default class BookList extends React.Component {
             // console.log(json);
             // console.log(books);
             // console.log(books[0].title);
+            console.log(books[0].id);
 
             if (books) {
                 this.setState(() => ({ books }));
