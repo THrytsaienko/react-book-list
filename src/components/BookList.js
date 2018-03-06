@@ -30,9 +30,9 @@ export default class BookList extends React.Component {
         try {
             const json = localStorage.getItem('books');
             const books = JSON.parse(json);
-            console.log(json);
-            console.log(books);
-            console.log(books[0].title);
+            // console.log(json);
+            // console.log(books);
+            // console.log(books[0].title);
 
             if (books) {
                 this.setState(() => ({ books }));
@@ -40,7 +40,7 @@ export default class BookList extends React.Component {
         } catch (e) {
             // Do nothing at all
         }
-        console.log('componentDidMount');
+        // console.log('componentDidMount');
     }
     componentDidUpdate(prevProps, prevState) {
         if (prevState.books.length !== this.state.books.length) {
