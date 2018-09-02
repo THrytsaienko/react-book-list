@@ -1,5 +1,5 @@
 import React from 'react';
-import { v4 } from 'uuid';
+// import { v4 } from 'uuid';
 
 export default class AddBook extends React.Component {
     state = {
@@ -10,15 +10,27 @@ export default class AddBook extends React.Component {
         e.preventDefault();
         const title = e.target.elements.title.value.trim();
         const author = e.target.elements.author.value.trim();
-        const isbn = e.target.elements.isbn.value.trim();
-        const id = v4();
+		const isbn = e.target.elements.isbn.value.trim();
+		let message;
+		// const id = v4();
+		if (title === '' || author === '' || isbn === ''){
+			message = this.props.handleAddBook('Error');
+			console.log('message >>>', message);
+		} else {
+			 message = this.props.handleAddBook({
+			 	title,
+			 	author,
+			 	isbn
+			 });
+			 console.log(`message ${message.text}`);
+		}
 
         console.log(title);
         console.log(author);
         console.log(isbn);
 
-        const message = this.props.handleAddBook({title, author, isbn, id});
-        console.log(`message ${message.text}`);
+        // const message = this.props.handleAddBook({title, author, isbn});
+        // console.log(`message ${message.text}`);
 
         this.setState(() => ({
             messageText: message.text,

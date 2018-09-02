@@ -9,13 +9,21 @@ export default class BookList extends React.Component {
         books: []
     }
     handleAddBook = (arrBookInfo) => {
-        console.log(arrBookInfo);
-        if (Object.keys(arrBookInfo).length !== 3){
-            return {
-                text: 'Please fill in all fields!',
-                className: 'error'
-            }
-        } else {
+		console.log('arrBookInfo >>>>>', arrBookInfo);
+		if(arrBookInfo === 'Error'){
+			console.log('errror >>>');
+			 return {
+			 	text: 'Please fill in all fields!',
+			 	className: 'error'
+			 }
+		}
+        // if (Object.keys(arrBookInfo).length !== 3){
+        //     return {
+        //         text: 'Please fill in all fields!',
+        //         className: 'error'
+        //     }
+		// } 
+		else {
             this.setState((prevState) => {
                 return {
                     books: prevState.books.concat(arrBookInfo)

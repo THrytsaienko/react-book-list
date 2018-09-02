@@ -6,7 +6,7 @@ const Books = (props) => (
         {
             props.books.map((book, index) => (
                 <BookItem 
-                    key={book.id}
+                    key={index}
                     bookTitle={book.title}
                     bookAuthor={book.author}
                     bookIsbn={book.isbn}
