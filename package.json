@@ -9,8 +9,7 @@
 		"dev-server": "webpack-dev-server"
 	},
 	"author": {
-		"name": "Tetiana Hrytsaienko",
-		"email": "kortatiana89@gmail.com"
+		"name": "Tetiana Hrytsaienko"
 	},
 	"license": "ISC",
 	"dependencies": {
